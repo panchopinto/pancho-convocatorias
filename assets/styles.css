@@ -127,3 +127,17 @@ input:focus, textarea:focus, select:focus{outline:2px solid color-mix(in hsl, va
 
 .site-footer{margin-top:2rem;padding:1rem 1.25rem;border-top:1px solid var(--edge);background:color-mix(in hsl, var(--bg) 85%, black);display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;color:var(--muted)}
 .site-footer a{color:var(--acc);text-decoration:none;font-weight:600}
+
+/* Nuevos proyectos: colores */
+:root{
+  --proy-celulas:#06d6a0;   /* verde agua */
+  --proy-oido:#f97316;      /* naranja vivo */
+  --proy-semillas:#16a34a;  /* verde hoja */
+  --proy-nublexr:#6366f1;   /* índigo XR */
+  --proy-trivias:#ec4899;   /* rosa trivia */
+}
+.item.proy-celulas{ --accent-color: var(--proy-celulas); }
+.item.proy-oido{ --accent-color: var(--proy-oido); }
+.item.proy-semillas{ --accent-color: var(--proy-semillas); }
+.item.proy-nublexr{ --accent-color: var(--proy-nublexr); }
+.item.proy-trivias{ --accent-color: var(--proy-trivias); }
