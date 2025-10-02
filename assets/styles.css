@@ -34,7 +34,7 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,Ubuntu;background:var(--bg);
 .spacer{flex:1}
 .theme-toggle{background:transparent;border:1px solid var(--edge);color:var(--txt);border-radius:12px;padding:.45rem .7rem;cursor:pointer}
 .btn{border:none;border-radius:14px;padding:.55rem .9rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;color:#07120b}
-.btn .btn-ico{width:18px;height:18px;display:inline-grid;place-items:center;border-radius:6px;background:#ffffffaa}
+.btn .btn-ico{display:none}
 .btn.ghost{background:transparent;color:var(--acc);border:1px solid color-mix(in hsl, var(--acc) 55%, black)}
 /* Variantes */
 .btn-proyectos{background:linear-gradient(135deg,color-mix(in hsl,var(--btn-proyectos) 95%, white),var(--btn-proyectos))}
@@ -63,3 +63,45 @@ p{color:var(--muted);line-height:1.7}
 
 .btn-catalogo{background:linear-gradient(135deg,color-mix(in hsl,var(--btn-catalogo) 95%, white),var(--btn-catalogo))}
 .btn-catalogo .btn-ico{background:color-mix(in hsl,var(--btn-catalogo) 25%, white)}
+
+/* ====== Colores para tarjetas de Proyectos y Alianzas ====== */
+:root{
+  /* Proyectos */
+  --proy-siamp:#06b6d4;        /* cian */
+  --proy-acuaponia:#10b981;    /* verde */
+  --proy-ortesis:#ef4444;      /* rojo */
+  --proy-vermanos:#f59e0b;     /* naranja */
+  --proy-fapa:#8b5cf6;         /* violeta */
+  /* Alianzas */
+  --ali-incar:#0ea5e9;         /* celeste */
+  --ali-ubb:#9333ea;           /* morado */
+  --ali-mnhn:#22c55e;          /* verde */
+  --ali-muni:#eab308;          /* dorado */
+}
+
+.item.accent{position:relative;overflow:hidden}
+.item.accent::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, color-mix(in hsl, var(--accent-color, #6ee7b7) 18%, transparent), transparent 35%);
+  pointer-events:none;
+}
+.item.accent{border-left:6px solid var(--accent-color, var(--acc))}
+
+/* Project accents */
+.item.proy-siamp{ --accent-color: var(--proy-siamp); }
+.item.proy-acuaponia{ --accent-color: var(--proy-acuaponia); }
+.item.proy-ortesis{ --accent-color: var(--proy-ortesis); }
+.item.proy-vermanos{ --accent-color: var(--proy-vermanos); }
+.item.proy-fapa{ --accent-color: var(--proy-fapa); }
+
+/* Alliance accents */
+.item.ali-incar{ --accent-color: var(--ali-incar); }
+.item.ali-ubb{ --accent-color: var(--ali-ubb); }
+.item.ali-mnhn{ --accent-color: var(--ali-mnhn); }
+.item.ali-muni{ --accent-color: var(--ali-muni); }
+
+.item h3 .chip{
+  display:inline-block; margin-left:.4rem; padding:.15rem .45rem; border-radius:999px;
+  background: color-mix(in hsl, var(--accent-color, var(--acc)) 25%, #000);
+  color: #e6eaf3; font-size:.78rem; border:1px solid color-mix(in hsl, var(--accent-color, var(--acc)) 70%, transparent);
+}
