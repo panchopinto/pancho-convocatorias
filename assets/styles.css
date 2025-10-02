@@ -124,3 +124,6 @@ input:focus, textarea:focus, select:focus{outline:2px solid color-mix(in hsl, va
 .counter{font-size:.85rem;color:var(--muted);text-align:right;margin-top:.25rem}
 .btn:hover{filter:brightness(1.05)}
 .btn:active{transform:translateY(1px)}
+
+.site-footer{margin-top:2rem;padding:1rem 1.25rem;border-top:1px solid var(--edge);background:color-mix(in hsl, var(--bg) 85%, black);display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;color:var(--muted)}
+.site-footer a{color:var(--acc);text-decoration:none;font-weight:600}
