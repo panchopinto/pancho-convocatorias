@@ -12,6 +12,7 @@
   --btn-alianzas:#3b82f6;   /* azul */
   --btn-contacto:#f59e0b;   /* naranja */
   --btn-bio:#a855f7;        /* violeta opcional */
+  --btn-catalogo:#ec4899;   /* rosa para Catálogo */
 }
 /* Tema claro (toggle) */
 :root[data-theme="light"]{
@@ -59,3 +60,6 @@ p{color:var(--muted);line-height:1.7}
 .kpis{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0 0}
 .kpi{background:#223;border:1px solid var(--edge);border-radius:10px;padding:.3rem .55rem;color:#cfe6ff;font-size:.85rem}
 .hero h1{font-size:clamp(1.6rem,2.6vw,2.2rem)}
+
+.btn-catalogo{background:linear-gradient(135deg,color-mix(in hsl,var(--btn-catalogo) 95%, white),var(--btn-catalogo))}
+.btn-catalogo .btn-ico{background:color-mix(in hsl,var(--btn-catalogo) 25%, white)}
