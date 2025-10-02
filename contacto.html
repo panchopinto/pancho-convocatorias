@@ -12,7 +12,6 @@
     <div class="brand"><span class="logo"><svg viewBox="0 0 24 24"><path d="M12 22v-8c0-3.866-3.582-7-8-7 0 4.418 3.134 8 7 8h1v7z" opacity=".85"/><path d="M13 14c3.866 0 7-3.582 7-8-4.418 0-8 3.134-8 7v1h1z"/></svg></span><span>Pancho Pinto</span></div>
     <div class="spacer"></div>
     <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">🌙</button>
-    <a class="btn btn-catalogo" href="https://panchopinto.github.io/Proyectos-Educativos/#catalogo" target="_blank" rel="noopener">Catálogo</a>
     <a class="btn btn-proyectos" href="proyectos.html">📌 Proyectos</a>
     <a class="btn btn-alianzas" href="alianzas.html">👋 Alianzas</a>
     <a class="btn btn-contacto" href="contacto.html">📫 Contacto</a>
@@ -21,22 +20,84 @@
 <main class="wrap">
   <section class="card">
     <h1>Contacto</h1>
-    <p>Puedes escribirme directamente por correo o WhatsApp. También hay un formulario serverless compatible con Netlify Forms.</p>
-    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin:.5rem 0 1rem">
-      <a class="btn btn-contacto" href="mailto:franciscoandresp@gmail.com">franciscoandresp@gmail.com</a>
-      <a class="btn btn-proyectos" href="tel:+56920027992">+56 9 200 279 92</a>
+    <p class="help">Respondo rápido por WhatsApp y correo. También puedes usar el formulario.</p>
+
+    <div class="chips">
+      <span class="chip">📧 <strong>franciscoandresp@gmail.com</strong> <button class="copy" data-copy="franciscoandresp@gmail.com" aria-label="Copiar email">Copiar</button></span>
+      <span class="chip">📞 <strong>+56 9 200 279 92</strong> <button class="copy" data-copy="+56 9 200 279 92" aria-label="Copiar teléfono">Copiar</button></span>
+      <a class="chip" href="https://wa.me/+56920027992?text=Hola%20Pancho%2C%20vengo%20desde%20tu%20portafolio%20%3A)" target="_blank" rel="noopener">💬 WhatsApp <span class="small">Abrir chat</span></a>
     </div>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="item">
-      <input type="hidden" name="form-name" value="contact">
-      <p style="display:none"><label>No rellenar: <input name="bot-field"></label></p>
-      <label>Nombre</label><input required name="nombre" placeholder="Tu nombre">
-      <label>Email</label><input required type="email" name="email" placeholder="tucorreo@dominio.com">
-      <label>Mensaje</label><textarea required name="mensaje" rows="6" placeholder="Cuéntame tu idea o necesidad"></textarea>
-      <div style="margin-top:.8rem"><button class="btn btn-contacto" type="submit">Enviar</button></div>
-    </form>
+
+    <div class="row">
+      <form name="contact" method="POST" action="/contacto-exito.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none">
+          <label>Si eres humano, deja este campo vacío <input name="bot-field"></label>
+        </p>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" placeholder="Tu nombre" required maxlength="80">
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="tucorreo@dominio.com" required maxlength="120">
+
+        <label for="motivo">Motivo</label>
+        <select id="motivo" name="motivo" required>
+          <option value="">Selecciona una opción…</option>
+          <option>Colaboración / Alianza</option>
+          <option>Asesoría / Taller</option>
+          <option>Implementación en colegio</option>
+          <option>Otro</option>
+        </select>
+
+        <label for="asunto">Asunto</label>
+        <input id="asunto" name="asunto" placeholder="Ej. Consulta sobre SIAMP" maxlength="120">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntame tu idea o necesidad" required maxlength="1200"></textarea>
+        <div class="counter"><span id="chars">0</span>/1200</div>
+
+        <div class="help">
+          Al enviar aceptas el uso de tus datos solo para responder a tu solicitud.
+        </div>
+        <div class="actions-row">
+          <button class="btn primary" type="submit">Enviar</button>
+          <a class="btn btn-contacto" href="mailto:franciscoandresp@gmail.com">Escribir por correo</a>
+          <a class="btn btn-proyectos" href="tel:+56920027992">Llamar</a>
+        </div>
+      </form>
+
+      <aside class="item" aria-label="Enlaces directos">
+        <h2>Atajos</h2>
+        <p class="help">Prefieres directo: abre un chat o envíame un correo con asunto prellenado.</p>
+        <div class="actions-row">
+          <a class="btn btn-contacto" href="mailto:franciscoandresp@gmail.com?subject=Consulta%20desde%20portafolio&body=Hola%20Pancho%2C%20">📫 Email</a>
+          <a class="btn btn-proyectos" href="https://wa.me/+56920027992?text=Hola%20Pancho%2C%20vengo%20desde%20tu%20portafolio%20%3A)" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+        <h2 style="margin-top:1rem">Disponibilidad</h2>
+        <p class="help">Lun–Vie · 09:00–18:00 (GMT‑3)</p>
+      </aside>
+    </div>
   </section>
-  <div class="footer">© franciscoandresp@gmail.com — +56 9 200 279 92</div>
 </main>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Copiado al portapapeles</div>
+
 <script src="assets/script.js"></script>
+<script>
+// Copy to clipboard + toast
+document.querySelectorAll('.copy').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    try{
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(()=>t.classList.remove('show'), 1600);
+    }catch(e){ console.warn('No se pudo copiar'); }
+  });
+});
+// Counter
+const msg = document.getElementById('mensaje'); const c = document.getElementById('chars');
+if(msg && c){ const f=()=> c.textContent = msg.value.length; msg.addEventListener('input', f); f(); }
+</script>
 </body>
 </html>
