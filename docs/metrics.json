@@ -1,0 +1,21 @@
+{
+  "anio": 2025,
+  "indicadores": [
+    {
+      "nombre": "Estudiantes PIE participantes",
+      "valor": 36
+    },
+    {
+      "nombre": "Kits replicados",
+      "valor": 5
+    },
+    {
+      "nombre": "Docentes capacitados",
+      "valor": 14
+    },
+    {
+      "nombre": "Proyectos activos",
+      "valor": 4
+    }
+  ]
+}
