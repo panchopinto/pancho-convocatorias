@@ -10,11 +10,12 @@
 <body>
 <header class="header">
   <nav class="nav">
-    <div class="brand">Pancho Pinto</div>
+    <div class="brand"><span class="logo"><svg viewBox="0 0 24 24"><path d="M12 22v-8c0-3.866-3.582-7-8-7 0 4.418 3.134 8 7 8h1v7z" opacity=".85"/><path d="M13 14c3.866 0 7-3.582 7-8-4.418 0-8 3.134-8 7v1h1z"/></svg></span><span>Pancho Pinto</span></div>
     <div class="spacer"></div>
-    <a class="btn ghost" href="proyectos.html">Proyectos</a>
-    <a class="btn ghost" href="alianzas.html">Alianzas</a>
-    <a class="btn" href="contacto.html">Contacto</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    <a class="btn btn-proyectos" href="proyectos.html"><span class="btn-ico"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg></span>Proyectos</a>
+    <a class="btn btn-alianzas" href="alianzas.html"><span class="btn-ico"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M16.59 7l-1.3-1.3a2 2 0 00-2.83 0L10 8.17l-1.41-1.41L5.34 10l4.95 4.95a2 2 0 002.83 0l4.24-4.24A2 2 0 0016.59 7z"/></svg></span>Alianzas</a>
+    <a class="btn btn-contacto" href="contacto.html"><span class="btn-ico"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v1l10 6 10-6V6a2 2 0 00-2-2zm0 4.236l-8 4.8-8-4.8V18a2 2 0 002 2h12a2 2 0 002-2V8.236z"/></svg></span>Contacto</a>
   </nav>
 </header>
 <main class="wrap">
@@ -30,9 +31,9 @@
       <span class="kpi">Transferencia</span>
     </div>
     <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
-      <a class="btn" href="proyectos.html">Ver proyectos realizados</a>
-      <a class="btn ghost" href="alianzas.html">Ver alianzas</a>
-      <a class="btn" href="contacto.html">Contactar</a>
+      <a class="btn btn-proyectos" href="proyectos.html"><span class="btn-ico"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg></span>Ver proyectos</a>
+      <a class="btn btn-alianzas" href="alianzas.html"><span class="btn-ico"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M16.59 7l-1.3-1.3a2 2 0 00-2.83 0L10 8.17l-1.41-1.41L5.34 10l4.95 4.95a2 2 0 002.83 0l4.24-4.24A2 2 0 0016.59 7z"/></svg></span>Alianzas</a>
+      <a class="btn btn-contacto" href="contacto.html"><span class="btn-ico"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v1l10 6 10-6V6a2 2 0 00-2-2zm0 4.236l-8 4.8-8-4.8V18a2 2 0 002 2h12a2 2 0 002-2V8.236z"/></svg></span>Contacto</a>
     </div>
     <div class="footer">“Tecnología con propósito: aprender, incluir y transformar.”</div>
   </section>
